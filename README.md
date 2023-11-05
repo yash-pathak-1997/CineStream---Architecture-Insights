@@ -60,7 +60,7 @@ When comparing 10 instances of a monolithic system with 10 instances of 3 micros
 
 Fig 13 & 14: Resource Utilisation Graphs 
 
-For the next three performance metrics (Latency, Throughput, Response Time), we have analysed by sending multiple requests simultaneously to the monolithic and microservices system to do load and performance test and hence calculating these metrics and comparing them. (Metrics here are analogous to NFRs) ![](Aspose.Words.79e867cb-bb70-4e78-a559-5e685008ac8f.005.png)
+For the next three performance metrics (Latency, Throughput, Response Time), we have analysed by sending multiple requests simultaneously to the monolithic and microservices system to do load and performance test and hence calculating these metrics and comparing them. (Metrics here are analogous to NFRs)
 
 We have used *Apache Jmeter* to send these requests simultaneously and perform testing. 
 
