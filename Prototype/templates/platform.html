@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container">
+    <h2 class="m-2 text-center">{{ content.platform }}</h2>
+    <h3 class="m-2">Movies</h3>
+    <div class="container">
+        <div class="row">
+            {% for movie in content.movies %}
+            <div class="col text-center">
+                <h3 class="m-3">{{ movie.title }}</h3>
+                <a href="{{ url_for('stream_video', item_id=movie.id) }}">
+                    <img src="{{ movie.image_url }}" width="300" height="350" class="rounded-5" alt="movie poster">
+                </a>
+                <p class="m-3">Watch for ₹20.00</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <h3 class="m-2">Series</h3>
+    <div class="container">
+        <div class="row">
+            {% for item in content.series %}
+            <div class="col text-center">
+                <h3 class="m-3">{{ item.title }}</h3>
+                <a href="{{ url_for('stream_video', item_id=item.id) }}">
+                    <img src="{{ item.image_url }}" width="300" height="350" class="rounded-5" alt="movie poster">
+                </a>
+                <p class="m-3">Watch for ₹20.00</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col text-center">
+                <h3 class="m-3">Netflix</h3>
+                <a href="{{ url_for('netflix') }}">
+                    <img src="../static/Netflix/Netflix_logo.jpg" width="400" height="250" class="rounded-5" alt="platform image">
+                </a>
+            </div>
+            <div class="col text-center">
+                <h3 class="m-3">Amazon Prime Video</h3>
+                <a href="{{ url_for('prime') }}">
+                    <img src="../static/Amazon Prime/primevideo-logo.png" width="400" height="250" class="rounded-5" alt="platform image">
+                </a>
+            </div>
+            <div class="col text-center">
+                <h3 class="m-3">Disney+ Hotstar</h3>
+                <a href="{{ url_for('hotstar') }}">
+                    <img src="../static/Hotstar/Hotstar_logo.jpg" width="400" height="250" class="rounded-5" alt="platform image">
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock content %}

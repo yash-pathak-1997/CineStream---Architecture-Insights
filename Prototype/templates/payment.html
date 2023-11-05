@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container text-center">
+    <h2 class="m-2">Payment Page</h2>
+    <h3 class="m-2">{{ content.title }}</h3>
+    <div class="m-3">
+        <img src="{{ content.image_url }}" width="350" height="450" class="rounded-5" alt="movie poster">
+    </div>
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#paymentModal">
+    Buy for ₹20
+    </button>
+
+</div>
+<!-- Modal -->
+<div class="modal fade" id="paymentModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="paymentModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content bg-dark">
+            <div class="modal-header">
+                <h5 class="modal-title" id="paymentModalLabel">Payment Successful!</h5>
+            </div>
+            <div class="modal-body">
+                Item Bought for ₹20!!
+            </div>
+            <div class="modal-footer">
+                <a href="{{ url_for('payment', item_id=content.id, paid=1) }}">
+                    <button type="button" class="btn btn-info">Watch Now</button>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

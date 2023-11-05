@@ -1,0 +1,6 @@
+{
+  "username": "postgres",
+  "password": "vivek@123",
+  "host": "localhost",
+  "database": "cinestream"
+}

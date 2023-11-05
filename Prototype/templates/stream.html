@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container">
+    <h2 class="text-center m-3">{{ content.title }}</h2>
+    <div class="container">
+        <video controls>
+            <source src="{{ content.video_url }}", type="video/mp4">
+        </video>
+    </div>
+</div>
+
+{% endblock content %}
