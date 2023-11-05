@@ -78,7 +78,7 @@ Following are the results for Get User Subscribed Contents (Monolithic and Micro
 
 ![](Aspose.Words.79e867cb-bb70-4e78-a559-5e685008ac8f.008.jpeg)
 
-We can clearly see that the latency for function in microservices system is higher as compared to the monolithic layered system.  ![](Aspose.Words.79e867cb-bb70-4e78-a559-5e685008ac8f.009.png)
+We can clearly see that the latency for function in microservices system is higher as compared to the monolithic layered system. 
 
 A monolith has no network latency, as all calls are local. Even in a perfectly parallelizable world, the monoliths will still be faster. The way to fix this issue is reducing call chain length, using fan-out and keeping data as local as possible. Similarly for the other function: 
 
@@ -100,7 +100,7 @@ Below are the throughputs of both functions for each system (monolith & microser
 
 ![](Aspose.Words.79e867cb-bb70-4e78-a559-5e685008ac8f.015.png)
 
-We can see that throughput for Microservices is less than monolith. This is because In workloads that cannot run concurrently across the network, monoliths may deliver better performance. Data needs to sent between services and also all the infrastructure induces a certain overhead. If the workload cannot ![](Aspose.Words.79e867cb-bb70-4e78-a559-5e685008ac8f.016.png)be scaled to multiple instances, a monolith can deliver a higher throughput. 
+We can see that throughput for Microservices is less than monolith. This is because In workloads that cannot run concurrently across the network, monoliths may deliver better performance. Data needs to sent between services and also all the infrastructure induces a certain overhead. If the workload cannot be scaled to multiple instances, a monolith can deliver a higher throughput. 
 
 4. Response Time 
 
