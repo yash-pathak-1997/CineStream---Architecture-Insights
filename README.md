@@ -12,11 +12,11 @@ Users can subscribe to the contents provided by these platforms and they can vie
 
 PFB some screenshots on the working of the system implemented: (Will be using these two for all the further NFR measurements) 
 
-![](Aspose.Words.79e867cb-bb70-4e78-a559-5e685008ac8f.001.jpeg)
+![](Prototype/static/Aspose.Words.79e867cb-bb70-4e78-a559-5e685008ac8f.001.jpeg)
 
 Fig 11: User subscribing to a content 
 
-![](Aspose.Words.79e867cb-bb70-4e78-a559-5e685008ac8f.002.jpeg)
+![](Prototype/static/Aspose.Words.79e867cb-bb70-4e78-a559-5e685008ac8f.002.jpeg)
 
 Fig 12: User viewing subscribed contents 
 
@@ -56,7 +56,7 @@ CPU% utilization measures the percentage of time that the CPU is busy executing 
 
 When comparing 10 instances of a monolithic system with 10 instances of 3 microservices each, the CPU% utilization is more than twice as high for the monolithic system, and the memory % utilization is also lower for microservices. This is because all the services in a monolithic system are tightly coupled and run on the same instance, making any changes to one service affect all the other services. On the other hand, microservices can be independently auto-scaled, which is not possible in a monolithic system. Hence, in general, CPU% utilization and Memory% utilization will be higher for a monolithic system compared to microservices. 
 
-![](Aspose.Words.79e867cb-bb70-4e78-a559-5e685008ac8f.003.jpeg) ![](Aspose.Words.79e867cb-bb70-4e78-a559-5e685008ac8f.004.jpeg)
+![](Prototype/static/Aspose.Words.79e867cb-bb70-4e78-a559-5e685008ac8f.003.jpeg) ![](Prototype/static/Aspose.Words.79e867cb-bb70-4e78-a559-5e685008ac8f.004.jpeg)
 
 Fig 13 & 14: Resource Utilisation Graphs 
 
@@ -64,7 +64,7 @@ For the next three performance metrics (Latency, Throughput, Response Time), we 
 
 We have used *Apache Jmeter* to send these requests simultaneously and perform testing. 
 
-![](Aspose.Words.79e867cb-bb70-4e78-a559-5e685008ac8f.006.jpeg)
+![](Prototype/static/Aspose.Words.79e867cb-bb70-4e78-a559-5e685008ac8f.006.jpeg)
 
 We analysed two functions: *Get User Subscribed Contents* and *User Subscribe to Content*. We sent 200 requests simultaneously to these functions in microservices and monolithic layered system to analyse these for each API and type of system. Both functions* in microservices system have a call chain of 3 i.e., they interact with other services via REST APIs. All calls in monolith are local. 
 
@@ -74,17 +74,17 @@ Latency is the duration that a request is waiting to be handled – during which
 
 Following are the results for Get User Subscribed Contents (Monolithic and Microservices): 
 
-![](Aspose.Words.79e867cb-bb70-4e78-a559-5e685008ac8f.007.jpeg)
+![](Prototype/static/Aspose.Words.79e867cb-bb70-4e78-a559-5e685008ac8f.007.jpeg)
 
-![](Aspose.Words.79e867cb-bb70-4e78-a559-5e685008ac8f.008.jpeg)
+![](Prototype/static/Aspose.Words.79e867cb-bb70-4e78-a559-5e685008ac8f.008.jpeg)
 
 We can clearly see that the latency for function in microservices system is higher as compared to the monolithic layered system. 
 
 A monolith has no network latency, as all calls are local. Even in a perfectly parallelizable world, the monoliths will still be faster. The way to fix this issue is reducing call chain length, using fan-out and keeping data as local as possible. Similarly for the other function: 
 
-![](Aspose.Words.79e867cb-bb70-4e78-a559-5e685008ac8f.010.jpeg)
+![](Prototype/static/Aspose.Words.79e867cb-bb70-4e78-a559-5e685008ac8f.010.jpeg)
 
-![](Aspose.Words.79e867cb-bb70-4e78-a559-5e685008ac8f.011.jpeg)
+![](Prototype/static/Aspose.Words.79e867cb-bb70-4e78-a559-5e685008ac8f.011.jpeg)
 
 3. Throughput 
 
@@ -92,13 +92,13 @@ Throughput indicates the number of transactions per second an application can ha
 
 Below are the throughputs of both functions for each system (monolith & microservice): 
 
-![](Aspose.Words.79e867cb-bb70-4e78-a559-5e685008ac8f.012.png)
+![](Prototype/static/Aspose.Words.79e867cb-bb70-4e78-a559-5e685008ac8f.012.png)
 
-![](Aspose.Words.79e867cb-bb70-4e78-a559-5e685008ac8f.013.png)
+![](Prototype/static/Aspose.Words.79e867cb-bb70-4e78-a559-5e685008ac8f.013.png)
 
-![](Aspose.Words.79e867cb-bb70-4e78-a559-5e685008ac8f.014.png)
+![](Prototype/static/Aspose.Words.79e867cb-bb70-4e78-a559-5e685008ac8f.014.png)
 
-![](Aspose.Words.79e867cb-bb70-4e78-a559-5e685008ac8f.015.png)
+![](Prototype/static/Aspose.Words.79e867cb-bb70-4e78-a559-5e685008ac8f.015.png)
 
 We can see that throughput for Microservices is less than monolith. This is because In workloads that cannot run concurrently across the network, monoliths may deliver better performance. Data needs to sent between services and also all the infrastructure induces a certain overhead. If the workload cannot be scaled to multiple instances, a monolith can deliver a higher throughput. 
 
@@ -108,13 +108,13 @@ Response time is the amount of time it takes for a service to process a request 
 
 Following graphs shows the response time as the number of simultaneous requests to each service in each system increases: 
 
-![](Aspose.Words.79e867cb-bb70-4e78-a559-5e685008ac8f.017.jpeg)
+![](Prototype/static/Aspose.Words.79e867cb-bb70-4e78-a559-5e685008ac8f.017.jpeg)
 
-![](Aspose.Words.79e867cb-bb70-4e78-a559-5e685008ac8f.018.jpeg)
+![](Prototype/static/Aspose.Words.79e867cb-bb70-4e78-a559-5e685008ac8f.018.jpeg)
 
-![](Aspose.Words.79e867cb-bb70-4e78-a559-5e685008ac8f.019.jpeg)
+![](Prototype/static/Aspose.Words.79e867cb-bb70-4e78-a559-5e685008ac8f.019.jpeg)
 
-![](Aspose.Words.79e867cb-bb70-4e78-a559-5e685008ac8f.020.jpeg)The Response time is lower for microservices as compared to monolith. This is because, all the calls in the monolith are local calls with no network latency which is not the case with microservices. Also, as all the data is stored on separate DBs, generating response and sending it back to client takes more time in microservices.  
+![](Prototype/static/Aspose.Words.79e867cb-bb70-4e78-a559-5e685008ac8f.020.jpeg)The Response time is lower for microservices as compared to monolith. This is because, all the calls in the monolith are local calls with no network latency which is not the case with microservices. Also, as all the data is stored on separate DBs, generating response and sending it back to client takes more time in microservices.  
 
 - **Trade-offs between the two patterns used** 
 
